@@ -1,1 +1,277 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STRANGER MOOD — Streetwear</title>
+  <meta name="description" content="STRANGER MOOD — Streetwear premium. Design glassmorphism bulle d’eau, mode sombre par défaut." />
+
+  <!-- Font (optionnel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-dark">
+  <!-- Background (bubbles + grain) -->
+  <div class="bg" aria-hidden="true">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="topbar glass">
+    <div class="container topbar__inner">
+      <a class="brand" href="#home" aria-label="Accueil">
+        <span class="brand__mark">SM</span>
+        <span class="brand__name">STRANGER MOOD</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <!-- bouton thème (facultatif, mode sombre par défaut) -->
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Changer le thème" title="Thème">
+          <span class="icon">◐</span>
+        </button>
+
+        <!-- panier -->
+        <button class="iconbtn" id="cartBtn" type="button" aria-label="Panier" title="Panier">
+          <span class="icon">🛒</span>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+
+        <!-- menu mobile -->
+        <button class="iconbtn burger" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="container hero">
+      <div class="hero__card glass">
+        <p class="pill">DROP • 2026</p>
+        <h1>Streetwear premium.<br><span class="glow">Vibe nocturne</span>.</h1>
+        <p class="sub">
+          Pièces essentielles, coupe clean, signature minimaliste.
+          Conçu pour ceux qui avancent différemment.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn primary" href="#shop">Découvrir le shop</a>
+          <button class="btn" id="notifyBtn" type="button">Recevoir les drops</button>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__n">4.8</span>
+            <span class="stat__t">Avis</span>
+          </div>
+          <div class="stat">
+            <span class="stat__n">72h</span>
+            <span class="stat__t">Expédition</span>
+          </div>
+          <div class="stat">
+            <span class="stat__n">∞</span>
+            <span class="stat__t">Mood</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__preview glass">
+        <div class="preview__top">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="preview__label">Product Spotlight</span>
+        </div>
+
+        <div class="product-spot">
+          <div class="spot__img" aria-hidden="true"></div>
+          <div class="spot__info">
+            <h3>Débardeur “Vibes Street”</h3>
+            <p>Look minimal — détails contrastés — logo discret.</p>
+            <div class="spot__row">
+              <span class="price">12 900 XOF</span>
+              <button class="btn small" data-add="tank-vibes">Ajouter</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Coupe Regular</span>
+          <span class="chip">Coton doux</span>
+          <span class="chip">Logo signature</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="container section" id="shop">
+      <div class="section__head">
+        <h2>Shop</h2>
+
+        <div class="filters glass">
+          <input class="input" id="search" type="search" placeholder="Rechercher (débardeur, hoodie…)" />
+          <select class="select" id="sort">
+            <option value="featured">Trier: Sélection</option>
+            <option value="priceAsc">Prix: croissant</option>
+            <option value="priceDesc">Prix: décroissant</option>
+            <option value="nameAsc">Nom: A → Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- Cartes produits injectées par JS -->
+      </div>
+    </section>
+
+    <!-- LOOKBOOK -->
+    <section class="container section" id="lookbook">
+      <div class="section__head">
+        <h2>Lookbook</h2>
+        <p class="muted">Ajoute tes photos ici plus tard (studio / street).</p>
+      </div>
+
+      <div class="masonry">
+        <div class="tile glass t1" aria-label="Photo lookbook 1"></div>
+        <div class="tile glass t2" aria-label="Photo lookbook 2"></div>
+        <div class="tile glass t3" aria-label="Photo lookbook 3"></div>
+        <div class="tile glass t4" aria-label="Photo lookbook 4"></div>
+        <div class="tile glass t5" aria-label="Photo lookbook 5"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="container section" id="about">
+      <div class="about glass">
+        <div>
+          <h2>À propos</h2>
+          <p class="muted">
+            STRANGER MOOD, c’est l’énergie de la rue + le minimal premium.
+            Des silhouettes propres, un branding discret, et des pièces faites pour durer.
+          </p>
+
+          <div class="about__bullets">
+            <div class="mini glass">
+              <span class="mini__k">Qualité</span>
+              <span class="mini__v">Tissus sélectionnés</span>
+            </div>
+            <div class="mini glass">
+              <span class="mini__k">Design</span>
+              <span class="mini__v">Signature minimal</span>
+            </div>
+            <div class="mini glass">
+              <span class="mini__k">Vibe</span>
+              <span class="mini__v">Nocturne & clean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__card glass">
+          <p class="pill">PROMESSE</p>
+          <h3>Built different.</h3>
+          <p class="muted">
+            Une marque pensée pour les créatifs, les athlètes, les rêveurs.
+            Porte le mood. Crée ton propre chemin.
+          </p>
+          <a class="btn primary full" href="#contact">Collaborer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container section" id="contact">
+      <div class="section__head">
+        <h2>Contact</h2>
+        <p class="muted">Commande, collab, wholesale — écris-nous.</p>
+      </div>
+
+      <div class="contact">
+        <form class="glass form" id="contactForm">
+          <label>
+            <span>Nom</span>
+            <input class="input" name="name" required placeholder="Ton nom" />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input class="input" name="email" type="email" required placeholder="ex: you@mail.com" />
+          </label>
+
+          <label class="full">
+            <span>Message</span>
+            <textarea class="input" name="message" rows="5" required placeholder="Dis-nous ce dont tu as besoin…"></textarea>
+          </label>
+
+          <button class="btn primary full" type="submit">Envoyer</button>
+          <p class="tiny muted">* Formulaire démo (JS). Connectable au backend plus tard.</p>
+        </form>
+
+        <div class="glass contact__side">
+          <h3>Infos</h3>
+          <p class="muted">Instagram: <strong>@stranger_mood_collection</strong></p>
+          <div class="divider"></div>
+          <p class="muted">Livraison: <strong>Abidjan → partout</strong></p>
+          <p class="muted">Support: <strong>24–48h</strong></p>
+          <div class="divider"></div>
+          <button class="btn" id="copyBtn" type="button">Copier @Instagram</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container footer">
+      <div class="glass footer__inner">
+        <span class="muted">© <span id="year"></span> STRANGER MOOD</span>
+        <span class="muted">Made with glass vibes ✦</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- DRAWER PANIER -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close="drawer"></div>
+
+    <div class="drawer__panel glass" role="dialog" aria-label="Panier">
+      <div class="drawer__head">
+        <h3>Panier</h3>
+        <button class="iconbtn" data-close="drawer" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="drawer__body" id="cartItems">
+        <!-- Items injectés par JS -->
+      </div>
+
+      <div class="drawer__foot">
+        <div class="row">
+          <span class="muted">Total</span>
+          <strong id="cartTotal">0 XOF</strong>
+        </div>
+        <button class="btn primary full" id="checkoutBtn" type="button">Commander</button>
+        <p class="tiny muted">Démo : connectable à WhatsApp / paiement ensuite.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
